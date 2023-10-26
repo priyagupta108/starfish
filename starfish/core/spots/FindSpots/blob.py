@@ -148,7 +148,7 @@ class BlobDetector(FindSpotsAlgorithm):
             y_inds = fitted_blobs_array[:, 0].astype(int)
             x_inds = fitted_blobs_array[:, 1].astype(int)
             radius = np.round(fitted_blobs_array[:, 2] * np.sqrt(3))
-            intensities = data_image[tuple([y_inds, x_inds])]
+            intensities = data_image[tuple([z_inds, y_inds, x_inds])]
 
         # construct dataframe
         spot_data = pd.DataFrame(
