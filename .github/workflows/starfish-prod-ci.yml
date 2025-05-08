@@ -4,7 +4,7 @@ name: starfish-prod-ci
 on:
 
   push:
-    branches: [ master ]
+    branches: [ fix-2062 ]
 
   pull_request:
     branches: [ master ]
