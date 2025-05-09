@@ -26,7 +26,8 @@ jobs:
         with:
           path: ${{ env.pythonLocation }}
           key: ${{ runner.OS }}-${{ env.pythonLocation }}-${{ hashFiles('requirements/REQUIREMENTS-CI.txt') }}
-
+      - name: Clear pip cache (optional if conflicts persist)
+        run: python -m pip cache purge
       - name: Install Dependencies
         run: |
           make install-dev
